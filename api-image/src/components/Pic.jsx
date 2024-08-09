@@ -7,9 +7,6 @@ const Pic = () => {
     const [urlsToDisplay, setUrlsToDisplay] = useState([]);
 
     useEffect(() => {
-
-
-        // Link to Unsplash Search API Documentation: https://unsplash.com/documentation#search-photos
         async function getUnsplashPhotos() {
             try {
 
@@ -17,7 +14,6 @@ const Pic = () => {
 
                 let resp = await axios.get(`https://api.unsplash.com/search/photos?client_id=${apiKey}&query=${id}&per_page=6`);
                 console.log(21, resp.data.results);
-                //store the array of results into urlsToDisplay variable
                 setUrlsToDisplay(resp.data.results);
             } catch (e) {
                 console.log(e);
